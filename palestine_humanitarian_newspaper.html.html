@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صحيفة الأفق الإنساني | صرخة الطفولة من قلب فلسطين</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap');
+
+        :root {
+            --bg-paper: #FBF9F4; /* خلفية ورق الصحف العتيق المريح للعين */
+            --primary-coffee: #2E1C16; /* بني داكن فخم للعناوين */
+            --accent-gold: #9E7245; /* ذهبي برونزي هادئ للفواصل والرموز */
+            --text-main: #3E3531; /* لون النص لضمان عدم إجهاد العين */
+            --card-white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-paper);
+            color: var(--text-main);
+            font-family: 'Tajawal', sans-serif;
+            padding: 40px 20px;
+            line-height: 1.9;
+        }
+
+        .newspaper-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            background-color: var(--card-white);
+            padding: 60px;
+            box-shadow: 0 0 40px rgba(46, 28, 22, 0.06);
+            border: 1px solid #ECE6DA;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 6px double var(--primary-coffee);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            border-bottom: 1px solid #ECE6DA;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .main-headline {
+            font-family: 'Amiri', serif;
+            font-size: 65px;
+            font-weight: 700;
+            color: var(--primary-coffee);
+            margin: 10px 0;
+            line-height: 1.1;
+        }
+
+        .sub-headline {
+            font-family: 'Amiri', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: #6E5C56;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 3fr 6fr 3fr;
+            gap: 45px;
+            margin-top: 20px;
+        }
+
+        .col-left, .col-center {
+            border-left: 1px solid #EDE7DC;
+            padding-left: 25px;
+        }
+
+        .article {
+            margin-bottom: 45px;
+            text-align: justify;
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            filter: sepia(0.15) contrast(0.95);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .tag {
+            color: #A62B2B;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .title-large {
+            font-family: 'Amiri', serif;
+            font-size: 38px;
+            color: var(--primary-coffee);
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .title-medium {
+            font-family: 'Amiri', serif;
+            font-size: 23px;
+            color: var(--primary-coffee);
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .lead-p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1E1513;
+            margin-bottom: 20px;
+            background-color: #FAF6EE;
+            padding: 20px;
+            border-right: 4px solid #A62B2B;
+        }
+
+        .nested-columns {
+            column-count: 2;
+            column-gap: 30px;
+            font-size: 15.5px;
+        }
+
+        .nested-columns p {
+            margin-bottom: 20px;
+            text-indent: 20px;
+        }
+
+        .blockquote-style {
+            background-color: #FAF5EE;
+            border-right: 5px solid var(--accent-gold);
+            padding: 25px;
+            margin: 30px 0;
+            font-family: 'Amiri', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--primary-coffee);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .sidebar-title {
+            font-family: 'Amiri', serif;
+            font-size: 26px;
+            border-bottom: 2px solid var(--primary-coffee);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: var(--primary-coffee);
+        }
+
+        .thank-you-footer {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #FAF6EE;
+            border-top: 1px solid #ECE6DA;
+            border-bottom: 1px solid #ECE6DA;
+            text-align: center;
+        }
+
+        .thank-you-text {
+            font-family: 'Amiri', serif;
+            font-size: 28px;
+            color: var(--primary-coffee);
+            font-weight: 700;
+            word-spacing: 2px;
+        }
+
+        .designer-name {
+            color: var(--accent-gold);
+        }
+
+        footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 13px;
+            color: #8C827A;
+        }
+
+        @media (max-width: 1200px) {
+            .grid-layout { grid-template-columns: 1fr 1fr; }
+            .col-left { border-left: none; padding-left: 0; }
+        }
+
+        @media (max-width: 850px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            .col-center, .col-left { border-left: none; padding-left: 0; }
+            .nested-columns { column-count: 1; }
+            .main-headline { font-size: 45px; }
+            .thank-you-text { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="newspaper-container">
+        
+        <!-- الترويسة الرئيسية -->
+        <header>
+            <div class="top-bar">
+                <div>ملف إنساني خاص وموسع</div>
+                <div>الثلاثاء، 19 مايو 2026 م</div>
+                <div>الأمل الصامد تحت الركام</div>
+            </div>
+            <h1 class="main-headline">الأُفُقُ الإِنْسَانِيُّ المُمْتَدُّ</h1>
+            <p class="sub-headline">توثيق تحليلي لملامح الصمود وألم الطفولة المشردة في قلب فلسطين</p>
+        </header>
+
+        <!-- الهيكل الرئيسي للجريدة -->
+        <div class="grid-layout">
+            
+            <!-- العمود الأيمن -->
+            <aside class="col-left">
+                <h3 class="sidebar-title">أحياء تحت الحصار</h3>
+                <article class="article">
+                    <span class="tag">من قاع المأساة</span>
+                    <h4 class="title-medium">رماد البيوت العتيقة وبقايا الذكريات</h4>
+                    <p style="font-size: 14.5px; margin-bottom: 15px;">في أزقة المدن والمخيمات الفلسطينية الحاضرة، لم تعد البيوت ملاذات آمنة، بل تحولت إلى تلال من الرماد والشظايا المتناثرة. العائلات التي كانت تجتمع حول مائدة واحدة بالأمس، تبحث اليوم بين الأنقاض عن بقايا ثياب أطفالها.</p>
+                    <p style="font-size: 14.5px;">إن المشهد الإنساني الحالي يتجاوز كل حدود الوصف؛ فالأمهات هناك لا يملكن ترف البكاء الطويل، إذ ينتقلن من فجيعة فقد إلى فجيعة نزوح أخرى حاميات ما تبقى من أرواح صغارهن.</p>
+                </article>
+
+                <article class="article" style="border-top: 1px dashed #EDE7DC; padding-top: 20px;">
+                    <span class="tag">شريان الحياة مفقود</span>
+                    <h4 class="title-medium">العطش الصامت ومكافحة الأوبئة</h4>
+                    <!-- صورة توضيحية لطابور المياه -->
+                    <img src="https://images.unsplash.com/photo-1547683905-f686c993aae5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="صورة توضيحية لأزمة مياه وشريان الحياة">
+                    <p style="font-size: 14.5px;">مع تدمير البنية التحتية ومحطات الضخ، بات الحصول على قطرة ماء نقية في غزة والقرى المحاصرة يمثل صراعاً يومياً من أجل البقاء. يصطف الأطفال لساعات طويلة في طوابير ممتدة تحت وطأة الشمس والبرد، حاملين أواني بلاستيكية صغيرة، وعيونهم منطفئة من فرط الإرهاق والخوف الصامت.</p>
+                </article>
+            </aside>
+
+            <!-- العمود الأوسط: المقال الرئيسي الطويل والمعدل مع الصور التوضيحية الرائعة -->
+            <main class="col-center">
+                <article class="article">
+                    <span class="tag">تحقيق ميداني إنساني وموسع جداً</span>
+                    <h2 class="title-large">أطفال بلا طفولة: حكايات مشردة فوق ركام فلسطين تتحدى صمت العالم وبؤس الواقع</h2>
+                    
+                    <!-- الصورة التوضيحية الرئيسية المعبرة بدقة -->
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="صورة توضيحية إنسانية تعبر عن أمل وبراءة الأطفال النازحين">
+                    
+                    <p class="lead-p">تمشي الأقدام الصغيرة حافية فوق زجاج النوافذ المهشمة، وتنام الأجساد النحيلة متوسدة الإسمنت البارد؛ هنا فلسطين، حيث تتجلى أبشع ملامح القسوة، وحيث يواجه صغارٌ لا ذنب لهم سياساتٍ ممنهجة تنضح بالبغض والخراب الموجه لكسر إرادة أمة بأكملها من خلال حرمان أطفالها من أدنى مقومات الحياة البريئة.</p>
+                    
+                    <div class="nested-columns">
+                        <p>إن المشهد في غزة وفلسطين اليوم لا يمكن اختزاله في مجرد أضرار مادية أو جدران متهاوية، بل هو تجسيد حي لسياسة الحقد المطلق التي تستهدف سحق المستقبل في مهده. البغض هنا لا يتوارى خلف مبررات عسكرية، بل يظهر عارياً في الاستهداف المباشر لمدارس الأطفال، ومستشفيات الولادة، وملاعب الصغار الرديئة. يجلس الطفل على حافة الركام، ملتحفاً سماءً لا تمطر سوى الموت، مدركاً بقسوة تفوق سنوات عمره السبع أن العالم الذي يتشدق بحقوق الإنسان قد أدار ظهره تماماً لمعاناته، تاركاً إياه فريسة لآلة طحن لا ترحم براءته ولا تحترم ضعف جسده النحيل.</p>
+                        
+                        <p>تتجلى قسوة هذا الواقع الصارخ في تفاصيل فاجعة اليتم والنزوح المتكرر؛ فالأطفال لا يملكن ترف الاستقرار في خيمة، إذ يُجبرون على النزوح تحت الخوف والتهديد مرات ومرات، حاملين على أكتافهم الغضة أشقاءهم الأصغر سناً أو بقايا أغطية بالية. إن البغض الممارس ضدهم يتجاوز الخراب المادي إلى محاولة اغتيال الروح ونزع السكينة؛ فالأطباء النفسيون في المستشفيات الميدانية يوثقون حالات مرعبة من صدمات عصبية مزمنة، حيث يفقد الطفل القدرة التعبيرية تماماً، وتتجمد ملامحه في ذهول دائم جراء رؤيته المباشرة لأجساد عائلته وهي تُمزق تحت الأنقاض، دون أن يملك حتى فرصة لوداعهم أو البكاء فوق قبورهم المرتجلة.</p>
+
+                        <!-- صورة توضيحية ثانية مدمجة داخل النص الطويل -->
+                        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="صورة توضيحية لمخيمات النازحين والحياة القاسية">
+
+                        <p>وفي عمق هذه المأساة، تبرز القسوة الممنهجة في سلاح التجويع والتعطيش الذي يُشحر ضد أجساد الأطفال النحيلة. ليس هناك أقسى من الحرمان المتعمد لقطرة ماء نظيفة أو كسر خبز يابس، حيث يُجبر الصغار على شرب مياه ملوثة ليرتشفوا معها الأمراض والأوبئة الفتاكة. هذا المنع المقصود للمساعدات الغذائية والطبية هو أوج التعبير عن الحقد الذي يسعى إلى إبادة جيل كامل ببطء صامت بعيداً عن الأعين، وسط خذلان دولي مريب وصمت عالمي مخزٍ يبرر الجريمة ويوفر الغطاء السياسي لمرتكبيها.</p>
+                        
+                        <p>لكن أمام كل هذا الطوفان من البغض والضغينة، تنبري إرادة أسطورية للصمود تتحدى هذه القسوة البالغة بكل السبل المتاحة. يبذل مهندسون وأطباء متطوعون جهوداً مضنية لتشغيل منصات "الطب الاتصالي الذكي" عبر شبكات إنترنت بديلة ومبتكرة تتحدى الحصار والقطع المتكرر. من خلال هذه التقنية، يتمكن أطباء نفسيون من تقديم جلسات دعم نفسي عاجلة للأطفال الذين يعانون من صدمات الفقد والاضطرابات العصبية الحادة جراء النيران، محاولين إعادة ترميم أرواحهم المكسورة ونزع فتيل الرعب الخفي من قلوبهم الصغيرة وتحويل الخوف الخانق إلى تماسك صلب.</p>
+                        
+                        <p>كما تُسخر التقنيات الحديثة وكتابة التقارير الرقمية لتوثيق هذه الانتهاكات الصارخة ونقلها بثبات إلى الساحة الدولية؛ فالصور والمقاطع الموثقة لدموع الأطفال وجوعهم تسهم في تعرية قسوة الجلاد وكسر جدار التعتيم المطبق. إن كل قلم حر يكتب، وكل كود برمجي يُصاغ لنشر هذه المعاناة، هو أداة كفاحية تفضح قبح الحقد الممارس ضد الأبرياء، وتضع العالم أمام مسؤولياته الأخلاقية والتاريخية لمنع إبادة البراءة الفلسطينية.</p>
+                        
+                        <p>إن صمود هذا الطفل المشرد، الذي يصر على حمل قلمه والدراسة فوق لوح خشبي بسيط وسط خيمته النازحة والرياح العاتية، هو الرد الحاسم والنهائي على قسوة وبغض أعداء الحياة. إنه يثبت أن الحقد مهما بلغ جنونه وتسلحه بآلات الدمار، لا يمكنه محو إرادة البقاء المتجذرة في وجدان الإنسان الفلسطيني. ستظل الطفولة هناك، رغم التشرد والألم واليتم، تنبت كأشجار الزيتون العتيقة، لتعلم البشرية كيف ينتصر الأمل على البغض، وكيف تنكسر القسوة المطلقة أمام إصرار الصغار على انتزاع شمس الحرية والعدالة والكرامة.</p>
+                    </div>
+
+                    <div class="blockquote-style">
+                        "إذا كان ضمير العالم قد غفا تحت وطأة المصالح، فإن عيون أطفال فلسطين المشردين تحت الركام تظل مستيقظة؛ الشاهد الأزلي على قسوة الإنسان تجاه أخيه الإنسان. صرختهم لن تموت، وصمودهم الأسطوري هو النور المتبقي في ليل الحضارة المعاصرة."
+                    </div>
+                </article>
+            </main>
+
+            <!-- العمود الأيسر -->
+            <aside class="col-right-end">
+                <h3 class="sidebar-title">بصمات الصمود</h3>
+                <article class="article">
+                    <span class="tag">التعليم تحت النار</span>
+                    <h4 class="title-medium">خيمة دراسية فوق أنقاض مدرسة</h4>
+                    <p style="font-size: 14px; margin-bottom: 12px;">رفضاً لسياسة تجهيل الأجيال، أسست معلمة نازحة خيمة صغيرة فوق ركام مدرستها المدمرة لتعليم الأطفال مبادئ القراءة والحساب باستخدام دفاتر استخرجت من تحت الأنقاض.</p>
+                    <p style="font-size: 14px;">تقول المعلمة: "الآلة تهدم الصفوف، لكنها لا تستطيع هدم الرغبة في المعرفة والعلم بداخلنا. سنعلمهم هنا ولو على التراب، لأن سلاحنا الحقيقي لمواجهة هذا التشرد هو الوعي والقلم".</p>
+                </article>
+
+                <article class="article" style="border-top: 1px dashed #EDE7DC; padding-top: 20px;">
+                    <span class="tag">تقنيات تكافلية</span>
+                    <h4 class="title-medium">منصات تتبع وإغاثة النازحين</h4>
+                    <!-- صورة توضيحية للتكافل الرقمي والإغاثة -->
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="صورة توضيحية للاتصال والمنصات الرقمية التكافلية">
+                    <p style="font-size: 14px;">أطلق مبرمجون متطوعون منصة سحابية بسيطة تعمل بأقل طاقة ممكنة لمساعدة العائلات الفلسطينية على تتبع ومشاركة أماكن تواجد المفقودين تحت الركام، وتوجيه فرق الإنقاذ الشعبي للمناطق الأكثر تضرراً بشكل عاجل، مما ساهم في إنقاذ مئات الأرواح المعزولة.</p>
+                </article>
+            </aside>
+
+        </div>
+
+        <!-- عبارة الشكر والاسم فقط بخط كبير وواضح وبلون دافئ -->
+        <div class="thank-you-footer">
+            <p class="thank-you-text">شكراً جزيلاً لكم | <span class="designer-name">عمر فراح</span></p>
+        </div>
+
+        <!-- تذييل الصحيفة المبسط -->
+        <footer>
+            <p>© 2026 صحيفة الأفق الإنساني الممتد.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
